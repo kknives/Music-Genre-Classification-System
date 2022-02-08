@@ -45,7 +45,7 @@ def process_file(
 
         if option == "mfcc":
             mfcc = librosa.feature.mfcc(
-                waveform[start_sample:end_sample],
+                y=waveform[start_sample:end_sample],
                 n_mfcc=n_mfcc,
                 n_fft=n_fft,
                 hop_length=hop_length,
@@ -55,7 +55,7 @@ def process_file(
 
         elif option == "melspectrogram":
             melspec = librosa.feature.melspectrogram(
-                waveform[start_sample:end_sample],
+                y=waveform[start_sample:end_sample],
                 n_mels=n_mels,
                 n_fft=n_fft,
                 hop_length=hop_length,
